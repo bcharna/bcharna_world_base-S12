@@ -33,9 +33,11 @@ ActiveRecord::Schema.define(:version => 20120416235755) do
     t.text     "content"
     t.string   "name"
     t.string   "email"
-    t.boolean  "active",     :default => true
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.boolean  "active",           :default => true
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
   create_table "photos", :force => true do |t|
