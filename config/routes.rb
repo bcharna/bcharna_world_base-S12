@@ -2,11 +2,15 @@ KcwWorld::Application.routes.draw do
 
   resources :comments
 
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
   resources :categories
-  resources :photos
+  resources :photos do
+    resources :comments
+  end
   resources :proverbs
-  
+
   match 'home' => 'home#index', :as => :home
   root :to => 'home#index'
 
