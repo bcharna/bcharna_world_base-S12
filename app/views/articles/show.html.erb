@@ -5,14 +5,14 @@
 </p>
 
 <p>
-  <b>Category</b>: 
+  <b>Category</b>:
   <%= @article.category.name %>
 </p>
 
 <p>&nbsp;</p>
 
 <p>
-  <b>Active</b>: 
+  <b>Active</b>:
   <%= @article.active ? "Yes" : "No" %>
 </p>
 
@@ -21,3 +21,5 @@
   <%= link_to 'Edit', edit_article_path(@article), :class => 'btn' %>
   <%= link_to 'Delete', article_path(@article), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
 </div>
+
+<%= render "partials/add_comments_to_page" %>

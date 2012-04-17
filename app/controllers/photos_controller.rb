@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  
+
   def index
     @photos = Photo.alphabetical.paginate(:page => params[:page]).per_page(5)
   end
@@ -7,6 +7,8 @@ class PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id])
+    @comments = @photo.comments
+    @commentable = @photo
   end
 
 

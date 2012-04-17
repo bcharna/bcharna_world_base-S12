@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  
+
   def index
     @articles = Article.alphabetical.paginate(:page => params[:page]).per_page(10)
   end
@@ -7,6 +7,8 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @comments = @article.comments
+    @commentable = @article
   end
 
 
